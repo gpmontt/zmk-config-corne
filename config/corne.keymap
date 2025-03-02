@@ -3,6 +3,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/oled.h>
+#include <dt-bindings/zmk/led_strip.h>
 
 / {
     keymap {
@@ -58,4 +60,25 @@
 
 &led_strip {
     chain-length = <27>; // Adjust this based on the number of LEDs
+};
+
+&oled {
+    compatible = "ssd1306";
+    width = <128>;
+    height = <32>;
+    segment-offset = <0>;
+    page-offset = <0>;
+    display-offset = <0>;
+    multiplex-ratio = <31>;
+    precharge-period = <0x22>;
+    com-pin-config = <0x12>;
+    vcomh-deselect-level = <0x20>;
+    com-scan-direction = <0>;
+    segment-remap = <1>;
+    address-width = <7>;
+    address-height = <7>;
+    address-mode = <0>;
+    reset-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
+    i2c-bus = <&i2c0>;
+    label = "SSD1306";
 };
