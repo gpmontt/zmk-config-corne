@@ -37,10 +37,6 @@
 
         color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
     };
-};
-
-&oled {
-    status = "okay";
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
@@ -57,6 +53,7 @@
         inversion-on;
         prechargep = <0x22>;
     };
+
 };
 
 / {
