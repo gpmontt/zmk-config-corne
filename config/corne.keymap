@@ -60,6 +60,7 @@
     chain-length = <27>; // Adjust this based on the number of LEDs
 };
 
+/*
 &oled {
     compatible = "ssd1306";
     width = <128>;
@@ -80,3 +81,4 @@
     i2c-bus = <&i2c0>;
     label = "SSD1306";
 };
+*/
